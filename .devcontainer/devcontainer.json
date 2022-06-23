@@ -21,8 +21,8 @@
 			"extensions": [
 				"haskell.haskell",
         "justusadam.language-haskell",
-        "lunaryorn.hlint",
-        "hoovercj.haskell-linter"			]
+        "lunaryorn.hlint"
+      ]
 		}
 	},
 
