@@ -41,29 +41,33 @@ null' :: [a] -> Bool
 null' [] = True
 null' _ = False
 
-elem' :: Int -> [Int] -> Bool
+
+elem' :: Eq a => a -> [a] -> Bool
 elem' _ [] = False
-elem' y (x:xs) = (y == x) || elem' y xs 
+elem' y (x:xs) = y == x || elem' y xs 
 
 replicate' :: Int -> a -> [a]
 replicate' n x = [x | _ <- [1..n]]
 
-maximum' :: [Int] -> Int
+
+maximum' :: Ord a => [a] -> a
 maximum' [] = error "Non ci sono elementi in questa lista"
 maximum' [x] = x
 maximum' (x:xs) = max x (maximum' xs)
 
-minimum' :: [Int] -> Int
+minimum' :: Ord a => [a] -> a
 mininum' [] = error "Non ci sono elementi in questa lista"
 minimum' [x] = x
 minimum' (x:xs) = min x (minimum' xs)
 
-sum' :: [Int] -> Int
+
+sum' :: Num a => [a] -> a
 sum' [] = error "Non ci sono elementi in questa lista"
 sum' [x] = x
 sum' (x:xs) = x + sum' xs
 
-product' :: [Int] -> Int
+
+product' :: Num a => [a] -> a
 product' [] = error "Non ci sono elementi in questa lista"
 product' [x] = x
 product' (x:xs) = x * product' xs
